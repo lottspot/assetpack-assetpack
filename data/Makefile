@@ -1,6 +1,7 @@
-PROJ := ${project_name}
+PROJ  := ${project_name}
+BUILD := $(PROJ).zip
 
-$(PROJ).zip: data meta
+$(BUILD): data meta
 	zip -r $@ $^
 
 data:
@@ -11,3 +12,8 @@ meta:
 
 clean:
 	rm -f *.zip
+
+install: $(BUILD)
+	cp $(BUILD) $(HOME)/.mkproject/assets/$(BUILD)
+
+.PHONY: clean install
