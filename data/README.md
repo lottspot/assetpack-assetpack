@@ -1,4 +1,4 @@
-# assetpack-assetpack
+# $project_type-$project_name
 
 ## Quick Start
 
